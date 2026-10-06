@@ -1,240 +1,624 @@
 {
-"es": {
-"seo": {
- "title": "Control de plagas y seguridad alimentaria en Canarias | Control Plus Canarias",
- "description": "Control de plagas, APPCC, formación de manipuladores y tratamiento de Legionella en las 8 islas. Desde 2011. Pida su visita por WhatsApp o llame al 627 52 55 17."
-},
-"ui": {
- "brand": "Control Plus Canarias",
- "nav": {"pests": "Control de plagas", "health": "Salud pública", "how": "Cómo trabajamos", "reviews": "Opiniones", "faq": "Preguntas", "contact": "Contacto"},
- "languages": {"es": "Español", "en": "English"},
- "whatsapp": "WhatsApp",
- "call": "Llamar",
- "email": "Email",
- "sendWhatsapp": "Enviar WhatsApp",
- "phoneDisplay": "+34 627 52 55 17",
- "phoneHref": "tel:+34627525517",
- "whatsappNumber": "34627525517",
- "emailAddress": "controlpluscanarias@gmail.com",
- "whatsappMessage": "Hola, les escribo desde su web. Quisiera pedir información sobre: ",
- "skipToContent": "Ir al contenido",
- "reviewTranslationLabel": "Traducción",
- "reviewSource": "Reseña de Google"
-},
-"hero": {
- "headline": "Control de plagas y seguridad alimentaria en toda Canarias",
- "sub": "Desde 2011 cuidamos hogares, comunidades, hoteles y restaurantes en las 8 islas. Cuéntenos su caso y le indicamos cómo actuar.",
- "ctaWhatsapp": "Escribir por WhatsApp",
- "ctaCall": "Llamar al 627 52 55 17"
-},
-"trust": [
- {"value": "Desde 2011", "label": "en Canarias"},
- {"value": "4,3 ★ (51)", "label": "valoración en Google"},
- {"value": "ROESBCA", "label": "inscrita en el registro oficial de biocidas"},
- {"value": "8 islas", "label": "cobertura en todo el archipiélago"}
-],
-"pests": {
- "title": "Control de plagas",
- "intro": "Inspeccionamos, localizamos el origen del problema y tratamos con productos biocidas autorizados. Después aplicamos medidas para que no vuelva.",
- "cards": [
-  {"name": "Desinsectación", "text": "Cucarachas, hormigas, pulgas, moscas y mosquitos en viviendas, locales y empresas."},
-  {"name": "Desratización", "text": "Control de ratas y ratones con inspección previa y seguimiento preventivo."},
-  {"name": "Desinfección", "text": "Actuación sobre virus, bacterias y hongos. También para grandes superficies como naves, supermercados o instalaciones deportivas, con nebulización y microdifusión."},
-  {"name": "Control de aves", "text": "Redes, pinchos y cables tensados contra palomas y otras aves en edificios, cubiertas y hoteles. Sin dañar a los animales."},
-  {"name": "Carcoma y termita", "text": "Tratamiento de madera en estructuras, mobiliario y viviendas, incluida la termita subterránea."},
-  {"name": "Certificados de control de plagas", "text": "Certificado oficial de los tratamientos realizados, útil ante inspecciones sanitarias y auditorías."}
- ]
-},
-"health": {
- "title": "Salud pública y seguridad alimentaria",
- "intro": "Ayudamos a restaurantes, comercios, industrias, empresas y administraciones a cumplir la normativa sanitaria, con asesoramiento y gestión documental.",
- "cards": [
-  {"name": "APPCC", "text": "Planes de análisis de peligros y puntos de control crítico a medida de su actividad."},
-  {"name": "Formación de manipuladores de alimentos", "text": "Higiene personal, contaminación cruzada, temperaturas y conservación para equipos de hostelería y comercio."},
-  {"name": "Tratamiento de Legionella", "text": "Control y prevención en agua sanitaria, torres de refrigeración y spas, con desinfección y control analítico."},
-  {"name": "Calidad e inocuidad alimentaria", "text": "Gestión de procesos, trazabilidad y riesgos para empresas del sector alimentario."},
-  {"name": "Gabinete de crisis alimentaria", "text": "Apoyo técnico ante alertas e incidentes que afecten a la seguridad de los alimentos."},
-  {"name": "Asesoría de salud pública", "text": "Evaluación de riesgos, medidas preventivas y control continuo de procesos higiénico-sanitarios."},
-  {"name": "Trámites ante Salud Pública", "text": "Registros, autorizaciones sanitarias y comunicaciones previas ante la Dirección General de Salud Pública."}
- ]
-},
-"how": {
- "title": "Cómo trabajamos",
- "steps": [
-  {"title": "Nos cuenta su caso", "text": "Por WhatsApp, teléfono o email. Indíquenos dónde está y qué ha observado."},
-  {"title": "Inspección y diagnóstico", "text": "Buscamos el origen del problema antes de tratar."},
-  {"title": "Tratamiento", "text": "Aplicamos el tratamiento adecuado con productos autorizados."},
-  {"title": "Documentación y seguimiento", "text": "Emitimos los certificados necesarios y revisamos que el problema no vuelva."}
- ]
-},
-"sectors": {
- "title": "A quién ayudamos",
- "items": [
-  {"name": "Restaurantes y hostelería", "text": "Control de plagas, APPCC, formación y certificados para pasar inspecciones."},
-  {"name": "Hoteles", "text": "Plagas, aves, desinfección y Legionella en instalaciones de alojamiento."},
-  {"name": "Comunidades de vecinos", "text": "Tratamientos en zonas comunes, garajes, cubiertas y cuartos de basuras."},
-  {"name": "Comercios e industria", "text": "Supermercados, centros comerciales, naves y empresas de alimentación."},
-  {"name": "Hogares", "text": "Cucarachas, hormigas, roedores o carcoma en su vivienda."}
- ]
-},
-"coverage": {
- "title": "Trabajamos en las 8 islas",
- "text": "Nuestra sede está en Las Chafiras, Tenerife, y atendemos en todo el archipiélago.",
- "islands": ["Tenerife", "La Palma", "La Gomera", "El Hierro", "Gran Canaria", "Fuerteventura", "Lanzarote", "La Graciosa"]
-},
-"reviews": {
- "title": "Lo que dicen nuestros clientes",
- "rating": "4,3 de 5 en Google, sobre 51 reseñas",
- "items": [
-  {"author": "Marisa", "lang": "es", "text": "Genial, tenía mi cocina plagadita, y el producto ha sido muy efectivo, muchas gracias", "translation": ""},
-  {"author": "Mike", "lang": "es", "text": "Me quedó el piso sin insectos", "translation": ""},
-  {"author": "Silvia", "lang": "es", "text": "100% Recomendado. Muy serios y profesionales. Antonio el técnico hizo un trabajo perfecto. Muchas gracias", "translation": ""},
-  {"author": "Sandra", "lang": "it", "text": "Nella gestione della mia attività ho sempre necessità di personale qualificato e professionale. Mi rivolgo sempre a Control plus canarias e sempre soddisfano le mie esigenze. I MIGLIORI", "translation": "En la gestión de mi negocio siempre necesito personal cualificado y profesional. Siempre acudo a Control Plus Canarias y siempre cumplen mis expectativas. Los mejores."}
- ]
-},
-"faq": {
- "title": "Preguntas frecuentes",
- "items": [
-  {"q": "¿En qué islas trabajan?", "a": "En las 8 islas Canarias. Nuestra sede está en Las Chafiras, en Tenerife."},
-  {"q": "¿Cómo pido una visita o un presupuesto?", "a": "Escríbanos por WhatsApp o llámenos al 627 52 55 17. También puede enviarnos un email a controlpluscanarias@gmail.com."},
-  {"q": "¿Emiten certificados de control de plagas?", "a": "Sí. Emitimos certificados oficiales de los tratamientos realizados. Los piden las actividades de alimentación, hostelería, comercio e industria sujetas a inspección sanitaria."},
-  {"q": "¿Están inscritos en el registro oficial de biocidas?", "a": "Sí. Control Plus Canarias está inscrita en el Registro Oficial de Establecimientos y Servicios Biocidas de Canarias (ROESBCA)."},
-  {"q": "¿Qué plagas tratan?", "a": "Ratas, ratones, cucarachas, hormigas, pulgas, moscas y mosquitos. También palomas y otras aves, y carcoma y termita en madera."},
-  {"q": "¿Hacen planes APPCC y formación para restaurantes?", "a": "Sí. Elaboramos planes APPCC personalizados e impartimos formación para manipuladores de alimentos a hostelería, comercios e industria alimentaria."},
-  {"q": "¿Tramitan los permisos ante Salud Pública?", "a": "Sí. Gestionamos registros, autorizaciones sanitarias y comunicaciones previas ante la Dirección General de Salud Pública."}
- ]
-},
-"contact": {
- "title": "Cuéntenos su caso",
- "text": "Escríbanos por WhatsApp o llame. También puede escribirnos por email.",
- "labels": {"phone": "Teléfono", "email": "Email", "address": "Dirección", "whatsapp": "WhatsApp"},
- "address": "Av. Claudio Delgado Díaz, 73, 1.ª planta, 38639 Las Chafiras, Santa Cruz de Tenerife"
-},
-"footer": {
- "legalName": "Control Plus Canarias SL",
- "cif": "CIF B76765171",
- "address": "Av. Claudio Delgado Díaz, 73, 1.ª planta, 38639 Las Chafiras, Santa Cruz de Tenerife",
- "privacy": "Política de privacidad",
- "rights": "Todos los derechos reservados"
-}
-},
-"en": {
-"seo": {
- "title": "Pest control and food safety in the Canary Islands | Control Plus Canarias",
- "description": "Pest control, HACCP, food-handler training and Legionella treatment across all 8 islands. Since 2011. Request a visit on WhatsApp or call +34 627 52 55 17."
-},
-"ui": {
- "brand": "Control Plus Canarias",
- "nav": {"pests": "Pest control", "health": "Public health", "how": "How we work", "reviews": "Reviews", "faq": "FAQ", "contact": "Contact"},
- "languages": {"es": "Español", "en": "English"},
- "whatsapp": "WhatsApp",
- "call": "Call",
- "email": "Email",
- "sendWhatsapp": "Send WhatsApp",
- "phoneDisplay": "+34 627 52 55 17",
- "phoneHref": "tel:+34627525517",
- "whatsappNumber": "34627525517",
- "emailAddress": "controlpluscanarias@gmail.com",
- "whatsappMessage": "Hello, I am writing from your website. I would like information about: ",
- "skipToContent": "Skip to content",
- "reviewTranslationLabel": "Translation",
- "reviewSource": "Google review"
-},
-"hero": {
- "headline": "Pest control and food safety across the Canary Islands",
- "sub": "Since 2011 we have looked after homes, communities, hotels and restaurants on all 8 islands. Tell us what is happening and we will advise you.",
- "ctaWhatsapp": "Message us on WhatsApp",
- "ctaCall": "Call +34 627 52 55 17"
-},
-"trust": [
- {"value": "Since 2011", "label": "in the Canary Islands"},
- {"value": "4.3 ★ (51)", "label": "rating on Google"},
- {"value": "ROESBCA", "label": "registered in the official biocide register"},
- {"value": "8 islands", "label": "coverage across the archipelago"}
-],
-"pests": {
- "title": "Pest control",
- "intro": "We inspect, find where the problem starts and treat with authorised biocide products. Then we put preventive measures in place so it stays away.",
- "cards": [
-  {"name": "Insect control", "text": "Cockroaches, ants, fleas, flies and mosquitoes in homes, premises and businesses."},
-  {"name": "Rodent control", "text": "Rats and mice handled with a prior inspection and preventive follow-up."},
-  {"name": "Disinfection", "text": "Treatment against viruses, bacteria and fungi. Also for large surfaces such as warehouses, supermarkets or sports facilities, using fogging and controlled micro-diffusion."},
-  {"name": "Bird control", "text": "Nets, spikes and tensioned wires against pigeons and other birds on buildings, roofs and hotels. Animals are not harmed."},
-  {"name": "Woodworm and termites", "text": "Wood treatment for structures, furniture and houses, including subterranean termites."},
-  {"name": "Pest control certificates", "text": "Official certificate of the treatments carried out, useful for health inspections and audits."}
- ]
-},
-"health": {
- "title": "Public health and food safety",
- "intro": "We help restaurants, shops, food producers, businesses and public bodies meet health regulations, with advice and paperwork handled for them.",
- "cards": [
-  {"name": "HACCP (APPCC)", "text": "Hazard analysis and critical control point plans tailored to your activity."},
-  {"name": "Food-handler training", "text": "Personal hygiene, cross-contamination, temperatures and storage for hospitality and retail teams."},
-  {"name": "Legionella treatment", "text": "Control and prevention in domestic water systems, cooling towers and spas, with disinfection and water analysis."},
-  {"name": "Food quality and safety management", "text": "Process control, traceability and risk management for food businesses."},
-  {"name": "Food safety crisis support", "text": "Technical support when an alert or incident affects food safety."},
-  {"name": "Public health consulting", "text": "Risk assessment, preventive measures and ongoing control of hygiene and health processes."},
-  {"name": "Public Health paperwork", "text": "Registrations, health authorisations and prior notifications to the Dirección General de Salud Pública."}
- ]
-},
-"how": {
- "title": "How we work",
- "steps": [
-  {"title": "You tell us what is happening", "text": "By WhatsApp, phone or email. Tell us where you are and what you have noticed."},
-  {"title": "Inspection and diagnosis", "text": "We look for the source of the problem before treating it."},
-  {"title": "Treatment", "text": "We apply the right treatment with authorised products."},
-  {"title": "Paperwork and follow-up", "text": "We issue the certificates you need and check that the problem does not return."}
- ]
-},
-"sectors": {
- "title": "Who we work with",
- "items": [
-  {"name": "Restaurants and hospitality", "text": "Pest control, HACCP, training and certificates to pass inspections."},
-  {"name": "Hotels", "text": "Pests, birds, disinfection and Legionella in accommodation facilities."},
-  {"name": "Residential communities", "text": "Treatments in shared areas, garages, roofs and bin rooms."},
-  {"name": "Shops and industry", "text": "Supermarkets, shopping centres, warehouses and food companies."},
-  {"name": "Homes", "text": "Cockroaches, ants, rodents or woodworm in your property."}
- ]
-},
-"coverage": {
- "title": "We work on all 8 islands",
- "text": "Our base is in Las Chafiras, Tenerife, and we serve the whole archipelago.",
- "islands": ["Tenerife", "La Palma", "La Gomera", "El Hierro", "Gran Canaria", "Fuerteventura", "Lanzarote", "La Graciosa"]
-},
-"reviews": {
- "title": "What our clients say",
- "rating": "4.3 out of 5 on Google, from 51 reviews",
- "items": [
-  {"author": "Marisa", "lang": "es", "text": "Genial, tenía mi cocina plagadita, y el producto ha sido muy efectivo, muchas gracias", "translation": "Great, my kitchen was infested and the product has been very effective, thank you very much."},
-  {"author": "Mike", "lang": "es", "text": "Me quedó el piso sin insectos", "translation": "My flat is now free of insects."},
-  {"author": "Silvia", "lang": "es", "text": "100% Recomendado. Muy serios y profesionales. Antonio el técnico hizo un trabajo perfecto. Muchas gracias", "translation": "100% recommended. Very serious and professional. Antonio, the technician, did a perfect job. Thank you very much."},
-  {"author": "Sandra", "lang": "it", "text": "Nella gestione della mia attività ho sempre necessità di personale qualificato e professionale. Mi rivolgo sempre a Control plus canarias e sempre soddisfano le mie esigenze. I MIGLIORI", "translation": "In running my business I always need qualified, professional staff. I always turn to Control Plus Canarias and they always meet my needs. The best."}
- ]
-},
-"faq": {
- "title": "Frequently asked questions",
- "items": [
-  {"q": "Which islands do you work on?", "a": "All 8 Canary Islands. Our base is in Las Chafiras, Tenerife."},
-  {"q": "How do I request a visit or a quote?", "a": "Message us on WhatsApp or call +34 627 52 55 17. You can also email controlpluscanarias@gmail.com."},
-  {"q": "Do you issue pest control certificates?", "a": "Yes. We issue official certificates for the treatments we carry out. Food, hospitality, retail and industrial businesses subject to health inspection usually need them."},
-  {"q": "Are you registered in the official biocide register?", "a": "Yes. Control Plus Canarias is registered in the Registro Oficial de Establecimientos y Servicios Biocidas de Canarias (ROESBCA)."},
-  {"q": "Which pests do you treat?", "a": "Rats, mice, cockroaches, ants, fleas, flies and mosquitoes. Also pigeons and other birds, and woodworm and termites in wood."},
-  {"q": "Do you provide HACCP plans and training for restaurants?", "a": "Yes. We write tailored HACCP plans and run food-handler training for hospitality, shops and food industry."},
-  {"q": "Can you handle Public Health permits for us?", "a": "Yes. We manage registrations, health authorisations and prior notifications with the Dirección General de Salud Pública."}
- ]
-},
-"contact": {
- "title": "Tell us what you need",
- "text": "Message us on WhatsApp or call. You can also email us.",
- "labels": {"phone": "Phone", "email": "Email", "address": "Address", "whatsapp": "WhatsApp"},
- "address": "Av. Claudio Delgado Díaz, 73, 1st floor, 38639 Las Chafiras, Santa Cruz de Tenerife"
-},
-"footer": {
- "legalName": "Control Plus Canarias SL",
- "cif": "CIF B76765171",
- "address": "Av. Claudio Delgado Díaz, 73, 1st floor, 38639 Las Chafiras, Santa Cruz de Tenerife",
- "privacy": "Privacy policy",
- "rights": "All rights reserved"
-}
-}
+ "es": {
+  "seo": {
+   "title": "Control de plagas y seguridad alimentaria en Canarias | Control Plus Canarias",
+   "description": "Control de plagas, APPCC, formación de manipuladores y tratamiento de Legionella en las 8 islas. Desde 2011. Pida su visita por WhatsApp o llame al 627 52 55 17."
+  },
+  "ui": {
+   "brand": "Control Plus Canarias",
+   "nav": {
+    "pests": "Control de plagas",
+    "health": "Salud pública",
+    "how": "Cómo trabajamos",
+    "reviews": "Opiniones",
+    "faq": "Preguntas",
+    "contact": "Contacto"
+   },
+   "languages": {
+    "es": "Español",
+    "en": "English"
+   },
+   "whatsapp": "WhatsApp",
+   "call": "Llamar",
+   "email": "Email",
+   "sendWhatsapp": "Enviar WhatsApp",
+   "phoneDisplay": "+34 627 52 55 17",
+   "phoneHref": "tel:+34627525517",
+   "whatsappNumber": "34627525517",
+   "emailAddress": "controlpluscanarias@gmail.com",
+   "whatsappMessage": "Hola, les escribo desde su web. Quisiera pedir información sobre: ",
+   "skipToContent": "Ir al contenido",
+   "reviewTranslationLabel": "Traducción",
+   "reviewSource": "Reseña de Google",
+   "detail": "Ver detalle",
+   "askWa": "Consultar por WhatsApp",
+   "close": "Cerrar",
+   "picker": "¿Qué plaga tiene?",
+   "pickerItems": [
+    [
+     "Cucarachas",
+     "p0"
+    ],
+    [
+     "Ratas y ratones",
+     "p1"
+    ],
+    [
+     "Palomas",
+     "p3"
+    ],
+    [
+     "Carcoma",
+     "p4"
+    ],
+    [
+     "Desinfección",
+     "p2"
+    ],
+    [
+     "Legionella",
+     "h2"
+    ]
+   ],
+   "reviewsAll": "Ver reseñas en Google",
+   "reviewsCount": "51 reseñas",
+   "faqSideTitle": "¿No encuentra su respuesta?",
+   "faqSideText": "Escríbanos y un técnico le contesta.",
+   "faqSideLink": "Preguntar por WhatsApp",
+   "healthMore": "También le ayudamos con",
+   "kick": {
+    "pests": "Plagas",
+    "health": "Empresas alimentarias",
+    "how": "Proceso",
+    "sectors": "Sectores",
+    "cov": "Cobertura",
+    "reviews": "Opiniones",
+    "faq": "Ayuda",
+    "contact": "Contacto"
+   },
+   "heroBadge": "Tenerife · las 8 islas",
+   "scroll": "Desplazar",
+   "waFloat": "¿Hablamos por WhatsApp?"
+  },
+  "hero": {
+   "headline": "Control de plagas y seguridad alimentaria en toda Canarias",
+   "sub": "Desde 2011 cuidamos hogares, comunidades, hoteles y restaurantes en las 8 islas. Cuéntenos su caso y le indicamos cómo actuar.",
+   "ctaWhatsapp": "Escribir por WhatsApp",
+   "ctaCall": "Llamar al 627 52 55 17"
+  },
+  "trust": [
+   {
+    "value": "Desde 2011",
+    "label": "en Canarias"
+   },
+   {
+    "value": "4,3 ★ (51)",
+    "label": "valoración en Google"
+   },
+   {
+    "value": "ROESBCA",
+    "label": "inscrita en el registro oficial de biocidas"
+   },
+   {
+    "value": "8 islas",
+    "label": "cobertura en todo el archipiélago"
+   }
+  ],
+  "pests": {
+   "title": "Control de plagas",
+   "intro": "Inspeccionamos, localizamos el origen del problema y tratamos con productos biocidas autorizados. Después aplicamos medidas para que no vuelva.",
+   "cards": [
+    {
+     "name": "Desinsectación",
+     "text": "Cucarachas, hormigas, pulgas, moscas y mosquitos en viviendas, locales y empresas."
+    },
+    {
+     "name": "Desratización",
+     "text": "Control de ratas y ratones con inspección previa y seguimiento preventivo."
+    },
+    {
+     "name": "Desinfección",
+     "text": "Actuación sobre virus, bacterias y hongos. También para grandes superficies como naves, supermercados o instalaciones deportivas, con nebulización y microdifusión."
+    },
+    {
+     "name": "Control de aves",
+     "text": "Redes, pinchos y cables tensados contra palomas y otras aves en edificios, cubiertas y hoteles. Sin dañar a los animales."
+    },
+    {
+     "name": "Carcoma y termita",
+     "text": "Tratamiento de madera en estructuras, mobiliario y viviendas, incluida la termita subterránea."
+    },
+    {
+     "name": "Certificados de control de plagas",
+     "text": "Certificado oficial de los tratamientos realizados, útil ante inspecciones sanitarias y auditorías."
+    }
+   ]
+  },
+  "health": {
+   "title": "Salud pública y seguridad alimentaria",
+   "intro": "Ayudamos a restaurantes, comercios, industrias, empresas y administraciones a cumplir la normativa sanitaria, con asesoramiento y gestión documental.",
+   "cards": [
+    {
+     "name": "APPCC",
+     "text": "Planes de análisis de peligros y puntos de control crítico a medida de su actividad."
+    },
+    {
+     "name": "Formación de manipuladores de alimentos",
+     "text": "Higiene personal, contaminación cruzada, temperaturas y conservación para equipos de hostelería y comercio."
+    },
+    {
+     "name": "Tratamiento de Legionella",
+     "text": "Control y prevención en agua sanitaria, torres de refrigeración y spas, con desinfección y control analítico."
+    },
+    {
+     "name": "Calidad e inocuidad alimentaria",
+     "text": "Gestión de procesos, trazabilidad y riesgos para empresas del sector alimentario."
+    },
+    {
+     "name": "Gabinete de crisis alimentaria",
+     "text": "Apoyo técnico ante alertas e incidentes que afecten a la seguridad de los alimentos."
+    },
+    {
+     "name": "Asesoría de salud pública",
+     "text": "Evaluación de riesgos, medidas preventivas y control continuo de procesos higiénico-sanitarios."
+    },
+    {
+     "name": "Trámites ante Salud Pública",
+     "text": "Registros, autorizaciones sanitarias y comunicaciones previas ante la Dirección General de Salud Pública."
+    }
+   ]
+  },
+  "how": {
+   "title": "Cómo trabajamos",
+   "steps": [
+    {
+     "title": "Nos cuenta su caso",
+     "text": "Por WhatsApp, teléfono o email. Indíquenos dónde está y qué ha observado."
+    },
+    {
+     "title": "Inspección y diagnóstico",
+     "text": "Buscamos el origen del problema antes de tratar."
+    },
+    {
+     "title": "Tratamiento",
+     "text": "Aplicamos el tratamiento adecuado con productos autorizados."
+    },
+    {
+     "title": "Documentación y seguimiento",
+     "text": "Emitimos los certificados necesarios y revisamos que el problema no vuelva."
+    }
+   ]
+  },
+  "sectors": {
+   "title": "A quién ayudamos",
+   "items": [
+    {
+     "name": "Restaurantes y hostelería",
+     "text": "Control de plagas, APPCC, formación y certificados para pasar inspecciones."
+    },
+    {
+     "name": "Hoteles",
+     "text": "Plagas, aves, desinfección y Legionella en instalaciones de alojamiento."
+    },
+    {
+     "name": "Comunidades de vecinos",
+     "text": "Tratamientos en zonas comunes, garajes, cubiertas y cuartos de basuras."
+    },
+    {
+     "name": "Comercios e industria",
+     "text": "Supermercados, centros comerciales, naves y empresas de alimentación."
+    },
+    {
+     "name": "Hogares",
+     "text": "Cucarachas, hormigas, roedores o carcoma en su vivienda."
+    }
+   ]
+  },
+  "coverage": {
+   "title": "Trabajamos en las 8 islas",
+   "text": "Nuestra sede está en Las Chafiras, Tenerife, y atendemos en todo el archipiélago.",
+   "islands": [
+    "Tenerife",
+    "La Palma",
+    "La Gomera",
+    "El Hierro",
+    "Gran Canaria",
+    "Fuerteventura",
+    "Lanzarote",
+    "La Graciosa"
+   ]
+  },
+  "reviews": {
+   "title": "Lo que dicen nuestros clientes",
+   "rating": "4,3 de 5 en Google, sobre 51 reseñas",
+   "items": [
+    {
+     "author": "Marisa",
+     "lang": "es",
+     "text": "Genial, tenía mi cocina plagadita, y el producto ha sido muy efectivo, muchas gracias",
+     "translation": ""
+    },
+    {
+     "author": "Mike",
+     "lang": "es",
+     "text": "Me quedó el piso sin insectos",
+     "translation": ""
+    },
+    {
+     "author": "Silvia",
+     "lang": "es",
+     "text": "100% Recomendado. Muy serios y profesionales. Antonio el técnico hizo un trabajo perfecto. Muchas gracias",
+     "translation": ""
+    },
+    {
+     "author": "Sandra",
+     "lang": "it",
+     "text": "Nella gestione della mia attività ho sempre necessità di personale qualificato e professionale. Mi rivolgo sempre a Control plus canarias e sempre soddisfano le mie esigenze. I MIGLIORI",
+     "translation": "En la gestión de mi negocio siempre necesito personal cualificado y profesional. Siempre acudo a Control Plus Canarias y siempre cumplen mis expectativas. Los mejores."
+    }
+   ]
+  },
+  "faq": {
+   "title": "Preguntas frecuentes",
+   "items": [
+    {
+     "q": "¿En qué islas trabajan?",
+     "a": "En las 8 islas Canarias. Nuestra sede está en Las Chafiras, en Tenerife."
+    },
+    {
+     "q": "¿Cómo pido una visita o un presupuesto?",
+     "a": "Escríbanos por WhatsApp o llámenos al 627 52 55 17. También puede enviarnos un email a controlpluscanarias@gmail.com."
+    },
+    {
+     "q": "¿Emiten certificados de control de plagas?",
+     "a": "Sí. Emitimos certificados oficiales de los tratamientos realizados. Los piden las actividades de alimentación, hostelería, comercio e industria sujetas a inspección sanitaria."
+    },
+    {
+     "q": "¿Están inscritos en el registro oficial de biocidas?",
+     "a": "Sí. Control Plus Canarias está inscrita en el Registro Oficial de Establecimientos y Servicios Biocidas de Canarias (ROESBCA)."
+    },
+    {
+     "q": "¿Qué plagas tratan?",
+     "a": "Ratas, ratones, cucarachas, hormigas, pulgas, moscas y mosquitos. También palomas y otras aves, y carcoma y termita en madera."
+    },
+    {
+     "q": "¿Hacen planes APPCC y formación para restaurantes?",
+     "a": "Sí. Elaboramos planes APPCC personalizados e impartimos formación para manipuladores de alimentos a hostelería, comercios e industria alimentaria."
+    },
+    {
+     "q": "¿Tramitan los permisos ante Salud Pública?",
+     "a": "Sí. Gestionamos registros, autorizaciones sanitarias y comunicaciones previas ante la Dirección General de Salud Pública."
+    }
+   ]
+  },
+  "contact": {
+   "title": "Cuéntenos su caso",
+   "text": "Escríbanos por WhatsApp o llame. También puede escribirnos por email.",
+   "labels": {
+    "phone": "Teléfono",
+    "email": "Email",
+    "address": "Dirección",
+    "whatsapp": "WhatsApp"
+   },
+   "address": "Av. Claudio Delgado Díaz, 73, 1.ª planta, 38639 Las Chafiras, Santa Cruz de Tenerife"
+  },
+  "footer": {
+   "legalName": "Control Plus Canarias SL",
+   "cif": "CIF B76765171",
+   "address": "Av. Claudio Delgado Díaz, 73, 1.ª planta, 38639 Las Chafiras, Santa Cruz de Tenerife",
+   "privacy": "Política de privacidad",
+   "rights": "Todos los derechos reservados"
+  }
+ },
+ "en": {
+  "seo": {
+   "title": "Pest control and food safety in the Canary Islands | Control Plus Canarias",
+   "description": "Pest control, HACCP, food-handler training and Legionella treatment across all 8 islands. Since 2011. Request a visit on WhatsApp or call +34 627 52 55 17."
+  },
+  "ui": {
+   "brand": "Control Plus Canarias",
+   "nav": {
+    "pests": "Pest control",
+    "health": "Public health",
+    "how": "How we work",
+    "reviews": "Reviews",
+    "faq": "FAQ",
+    "contact": "Contact"
+   },
+   "languages": {
+    "es": "Español",
+    "en": "English"
+   },
+   "whatsapp": "WhatsApp",
+   "call": "Call",
+   "email": "Email",
+   "sendWhatsapp": "Send WhatsApp",
+   "phoneDisplay": "+34 627 52 55 17",
+   "phoneHref": "tel:+34627525517",
+   "whatsappNumber": "34627525517",
+   "emailAddress": "controlpluscanarias@gmail.com",
+   "whatsappMessage": "Hello, I am writing from your website. I would like information about: ",
+   "skipToContent": "Skip to content",
+   "reviewTranslationLabel": "Translation",
+   "reviewSource": "Google review",
+   "detail": "View details",
+   "askWa": "Ask on WhatsApp",
+   "close": "Close",
+   "picker": "What pest do you have?",
+   "pickerItems": [
+    [
+     "Cockroaches",
+     "p0"
+    ],
+    [
+     "Rats & mice",
+     "p1"
+    ],
+    [
+     "Pigeons",
+     "p3"
+    ],
+    [
+     "Woodworm",
+     "p4"
+    ],
+    [
+     "Disinfection",
+     "p2"
+    ],
+    [
+     "Legionella",
+     "h2"
+    ]
+   ],
+   "reviewsAll": "See reviews on Google",
+   "reviewsCount": "51 reviews",
+   "faqSideTitle": "Can’t find your answer?",
+   "faqSideText": "Message us and a technician will reply.",
+   "faqSideLink": "Ask on WhatsApp",
+   "healthMore": "We also help with",
+   "kick": {
+    "pests": "Pests",
+    "health": "Food businesses",
+    "how": "Process",
+    "sectors": "Sectors",
+    "cov": "Coverage",
+    "reviews": "Reviews",
+    "faq": "Help",
+    "contact": "Contact"
+   },
+   "heroBadge": "Tenerife · all 8 islands",
+   "scroll": "Scroll",
+   "waFloat": "Chat on WhatsApp?"
+  },
+  "hero": {
+   "headline": "Pest control and food safety across the Canary Islands",
+   "sub": "Since 2011 we have looked after homes, communities, hotels and restaurants on all 8 islands. Tell us what is happening and we will advise you.",
+   "ctaWhatsapp": "Message us on WhatsApp",
+   "ctaCall": "Call +34 627 52 55 17"
+  },
+  "trust": [
+   {
+    "value": "Since 2011",
+    "label": "in the Canary Islands"
+   },
+   {
+    "value": "4.3 ★ (51)",
+    "label": "rating on Google"
+   },
+   {
+    "value": "ROESBCA",
+    "label": "registered in the official biocide register"
+   },
+   {
+    "value": "8 islands",
+    "label": "coverage across the archipelago"
+   }
+  ],
+  "pests": {
+   "title": "Pest control",
+   "intro": "We inspect, find where the problem starts and treat with authorised biocide products. Then we put preventive measures in place so it stays away.",
+   "cards": [
+    {
+     "name": "Insect control",
+     "text": "Cockroaches, ants, fleas, flies and mosquitoes in homes, premises and businesses."
+    },
+    {
+     "name": "Rodent control",
+     "text": "Rats and mice handled with a prior inspection and preventive follow-up."
+    },
+    {
+     "name": "Disinfection",
+     "text": "Treatment against viruses, bacteria and fungi. Also for large surfaces such as warehouses, supermarkets or sports facilities, using fogging and controlled micro-diffusion."
+    },
+    {
+     "name": "Bird control",
+     "text": "Nets, spikes and tensioned wires against pigeons and other birds on buildings, roofs and hotels. Animals are not harmed."
+    },
+    {
+     "name": "Woodworm and termites",
+     "text": "Wood treatment for structures, furniture and houses, including subterranean termites."
+    },
+    {
+     "name": "Pest control certificates",
+     "text": "Official certificate of the treatments carried out, useful for health inspections and audits."
+    }
+   ]
+  },
+  "health": {
+   "title": "Public health and food safety",
+   "intro": "We help restaurants, shops, food producers, businesses and public bodies meet health regulations, with advice and paperwork handled for them.",
+   "cards": [
+    {
+     "name": "HACCP (APPCC)",
+     "text": "Hazard analysis and critical control point plans tailored to your activity."
+    },
+    {
+     "name": "Food-handler training",
+     "text": "Personal hygiene, cross-contamination, temperatures and storage for hospitality and retail teams."
+    },
+    {
+     "name": "Legionella treatment",
+     "text": "Control and prevention in domestic water systems, cooling towers and spas, with disinfection and water analysis."
+    },
+    {
+     "name": "Food quality and safety management",
+     "text": "Process control, traceability and risk management for food businesses."
+    },
+    {
+     "name": "Food safety crisis support",
+     "text": "Technical support when an alert or incident affects food safety."
+    },
+    {
+     "name": "Public health consulting",
+     "text": "Risk assessment, preventive measures and ongoing control of hygiene and health processes."
+    },
+    {
+     "name": "Public Health paperwork",
+     "text": "Registrations, health authorisations and prior notifications to the Dirección General de Salud Pública."
+    }
+   ]
+  },
+  "how": {
+   "title": "How we work",
+   "steps": [
+    {
+     "title": "You tell us what is happening",
+     "text": "By WhatsApp, phone or email. Tell us where you are and what you have noticed."
+    },
+    {
+     "title": "Inspection and diagnosis",
+     "text": "We look for the source of the problem before treating it."
+    },
+    {
+     "title": "Treatment",
+     "text": "We apply the right treatment with authorised products."
+    },
+    {
+     "title": "Paperwork and follow-up",
+     "text": "We issue the certificates you need and check that the problem does not return."
+    }
+   ]
+  },
+  "sectors": {
+   "title": "Who we work with",
+   "items": [
+    {
+     "name": "Restaurants and hospitality",
+     "text": "Pest control, HACCP, training and certificates to pass inspections."
+    },
+    {
+     "name": "Hotels",
+     "text": "Pests, birds, disinfection and Legionella in accommodation facilities."
+    },
+    {
+     "name": "Residential communities",
+     "text": "Treatments in shared areas, garages, roofs and bin rooms."
+    },
+    {
+     "name": "Shops and industry",
+     "text": "Supermarkets, shopping centres, warehouses and food companies."
+    },
+    {
+     "name": "Homes",
+     "text": "Cockroaches, ants, rodents or woodworm in your property."
+    }
+   ]
+  },
+  "coverage": {
+   "title": "We work on all 8 islands",
+   "text": "Our base is in Las Chafiras, Tenerife, and we serve the whole archipelago.",
+   "islands": [
+    "Tenerife",
+    "La Palma",
+    "La Gomera",
+    "El Hierro",
+    "Gran Canaria",
+    "Fuerteventura",
+    "Lanzarote",
+    "La Graciosa"
+   ]
+  },
+  "reviews": {
+   "title": "What our clients say",
+   "rating": "4.3 out of 5 on Google, from 51 reviews",
+   "items": [
+    {
+     "author": "Marisa",
+     "lang": "es",
+     "text": "Genial, tenía mi cocina plagadita, y el producto ha sido muy efectivo, muchas gracias",
+     "translation": "Great, my kitchen was infested and the product has been very effective, thank you very much."
+    },
+    {
+     "author": "Mike",
+     "lang": "es",
+     "text": "Me quedó el piso sin insectos",
+     "translation": "My flat is now free of insects."
+    },
+    {
+     "author": "Silvia",
+     "lang": "es",
+     "text": "100% Recomendado. Muy serios y profesionales. Antonio el técnico hizo un trabajo perfecto. Muchas gracias",
+     "translation": "100% recommended. Very serious and professional. Antonio, the technician, did a perfect job. Thank you very much."
+    },
+    {
+     "author": "Sandra",
+     "lang": "it",
+     "text": "Nella gestione della mia attività ho sempre necessità di personale qualificato e professionale. Mi rivolgo sempre a Control plus canarias e sempre soddisfano le mie esigenze. I MIGLIORI",
+     "translation": "In running my business I always need qualified, professional staff. I always turn to Control Plus Canarias and they always meet my needs. The best."
+    }
+   ]
+  },
+  "faq": {
+   "title": "Frequently asked questions",
+   "items": [
+    {
+     "q": "Which islands do you work on?",
+     "a": "All 8 Canary Islands. Our base is in Las Chafiras, Tenerife."
+    },
+    {
+     "q": "How do I request a visit or a quote?",
+     "a": "Message us on WhatsApp or call +34 627 52 55 17. You can also email controlpluscanarias@gmail.com."
+    },
+    {
+     "q": "Do you issue pest control certificates?",
+     "a": "Yes. We issue official certificates for the treatments we carry out. Food, hospitality, retail and industrial businesses subject to health inspection usually need them."
+    },
+    {
+     "q": "Are you registered in the official biocide register?",
+     "a": "Yes. Control Plus Canarias is registered in the Registro Oficial de Establecimientos y Servicios Biocidas de Canarias (ROESBCA)."
+    },
+    {
+     "q": "Which pests do you treat?",
+     "a": "Rats, mice, cockroaches, ants, fleas, flies and mosquitoes. Also pigeons and other birds, and woodworm and termites in wood."
+    },
+    {
+     "q": "Do you provide HACCP plans and training for restaurants?",
+     "a": "Yes. We write tailored HACCP plans and run food-handler training for hospitality, shops and food industry."
+    },
+    {
+     "q": "Can you handle Public Health permits for us?",
+     "a": "Yes. We manage registrations, health authorisations and prior notifications with the Dirección General de Salud Pública."
+    }
+   ]
+  },
+  "contact": {
+   "title": "Tell us what you need",
+   "text": "Message us on WhatsApp or call. You can also email us.",
+   "labels": {
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "whatsapp": "WhatsApp"
+   },
+   "address": "Av. Claudio Delgado Díaz, 73, 1st floor, 38639 Las Chafiras, Santa Cruz de Tenerife"
+  },
+  "footer": {
+   "legalName": "Control Plus Canarias SL",
+   "cif": "CIF B76765171",
+   "address": "Av. Claudio Delgado Díaz, 73, 1st floor, 38639 Las Chafiras, Santa Cruz de Tenerife",
+   "privacy": "Privacy policy",
+   "rights": "All rights reserved"
+  }
+ }
 }
