@@ -79,7 +79,32 @@
    "heroBadge": "Tenerife · las 8 islas",
    "scroll": "Desplazar",
    "waFloat": "¿Hablamos por WhatsApp?",
-   "toTop": "Volver arriba"
+   "toTop": "Volver arriba",
+   "rotPre": "Para",
+   "rot": [
+    "hogares",
+    "restaurantes",
+    "hoteles",
+    "comunidades",
+    "empresas"
+   ],
+   "reel": [
+    "Desinsectación en cocinas",
+    "Desinfección por nebulización",
+    "Tratamiento perimetral"
+   ],
+   "hq": "Sede central",
+   "hqPlace": "Las Chafiras, Tenerife",
+   "covStats": [
+    [
+     "8",
+     "islas atendidas"
+    ],
+    [
+     "2011",
+     "trabajando en Canarias"
+    ]
+   ]
   },
   "hero": {
    "headline": "Control de plagas y seguridad alimentaria en toda Canarias",
@@ -391,7 +416,32 @@
    "heroBadge": "Tenerife · all 8 islands",
    "scroll": "Scroll",
    "waFloat": "Chat on WhatsApp?",
-   "toTop": "Back to top"
+   "toTop": "Back to top",
+   "rotPre": "For",
+   "rot": [
+    "homes",
+    "restaurants",
+    "hotels",
+    "communities",
+    "businesses"
+   ],
+   "reel": [
+    "Kitchen insect control",
+    "Fogging disinfection",
+    "Perimeter treatment"
+   ],
+   "hq": "Head office",
+   "hqPlace": "Las Chafiras, Tenerife",
+   "covStats": [
+    [
+     "8",
+     "islands served"
+    ],
+    [
+     "2011",
+     "working in the Canaries"
+    ]
+   ]
   },
   "hero": {
    "headline": "Pest control and food safety across the Canary Islands",

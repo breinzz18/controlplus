@@ -7,7 +7,7 @@ const write = (p, s) => { const u = new URL(p, root); fs.mkdirSync(new URL(".", 
 const COPY = JSON.parse(read("content/copy.json"));
 const MAP = JSON.parse(read("img/islands.json"));
 const SITE = "https://controlplus.comebientf.com";
-const V = "3";
+const V = "4";
 const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
 // photos: p-* = 480/960/1400, s-* = 480/960/1600
@@ -92,21 +92,20 @@ function page(lang) {
 <main id="main">
 <section class="hero" id="top" aria-labelledby="h1">
   <div class="hero__media">
-    <picture><source media="(min-width: 900px)" srcset="/video/hero-d.jpg?v=${V}"><img class="hero__poster" src="/video/hero-m.jpg?v=${V}" width="720" height="720" alt="${lang === "es" ? "Técnico de control de plagas tratando el zócalo de una cocina" : "Pest control technician treating a kitchen skirting board"}" fetchpriority="high"></picture>
-    <video class="hero__video" muted playsinline loop preload="none" data-src-m="/video/hero-m.mp4?v=${V}" data-src-d="/video/hero-d.mp4?v=${V}" aria-hidden="true"></video>
-    <span class="hero__badge"><i></i>${esc(u.heroBadge)}</span>
+    <picture><source media="(min-width: 900px)" srcset="/video/reel-d.jpg?v=${V}"><img class="hero__poster" src="/video/reel-m.jpg?v=${V}" width="720" height="900" alt="${lang === "es" ? "Técnicos de control de plagas trabajando" : "Pest control technicians at work"}" fetchpriority="high"></picture>
+    <video class="hero__video" muted playsinline loop preload="none" data-src-m="/video/reel-m.mp4?v=${V}" data-src-d="/video/reel-d.mp4?v=${V}" aria-hidden="true"></video>
   </div>
   <div class="wrap hero__body">
     <a class="chip-rating hero__in" style="--d:0" href="#opiniones">${G}<strong>4,3</strong>${stars}<span>${esc(u.reviewsCount)}</span></a>
     <h1 id="h1" class="hero__title">${words(c.hero.headline)}</h1>
-    <p class="hero__sub hero__in" style="--d:5">${esc(c.hero.sub)}</p>
+    <p class="hero__rot hero__in" style="--d:5">${esc(u.rotPre)} <span class="rot" aria-live="off">${u.rot.map((w, i) => `<span${i ? "" : ' class="on"'}>${esc(w)}</span>`).join("")}</span></p>
     <div class="hero__ctas hero__in" style="--d:6" id="heroCtas">
       <a class="btn btn--wa btn--lg mag" href="${WA(c, u.brand)}" target="_blank" rel="noopener">${waIc}<span>${esc(c.hero.ctaWhatsapp)}</span></a>
       <a class="btn btn--glass btn--lg" href="${u.phoneHref}">${phIc}<span>${esc(c.hero.ctaCall)}</span></a>
     </div>
     <div class="picker hero__in" style="--d:7"><p>${esc(u.picker)}</p><ul role="list">${u.pickerItems.map(([l, id], i) => `<li><a href="#${id}" data-open="${id}" style="--i:${i}">${esc(l)}</a></li>`).join("")}</ul></div>
   </div>
-  <a class="hero__scroll" href="#plagas" aria-label="${esc(u.scroll)}"><i></i></a>
+  <div class="reel hero__in" style="--d:8" aria-hidden="true"><div class="wrap reel__in">${u.reel.map((l, i) => `<button type="button" class="reel__seg" data-seg="${i}" tabindex="-1"><i><b></b></i><span>0${i + 1}</span>${esc(l)}</button>`).join("")}</div></div>
 </section>
 
 <section class="trust" aria-label="${esc(u.brand)}">
@@ -160,11 +159,13 @@ function page(lang) {
   </div>
 </section>
 
-<section class="sec" id="cobertura" aria-labelledby="t-cov">
-  <div class="wrap cov">
-    <div class="sec__head reveal">${kick("cov")}<h2 id="t-cov">${words(c.coverage.title)}</h2><p class="lead">${esc(c.coverage.text)}</p>
+<section class="covx" id="cobertura" aria-labelledby="t-cov">
+  <div class="covx__media"><img src="/video/teide.jpg?v=${V}" alt="" loading="lazy"><video muted playsinline loop preload="none" data-src="/video/teide.mp4?v=${V}" aria-hidden="true"></video></div>
+  <div class="wrap covx__in">
+    <div class="covx__card reveal">${kick("cov", true)}<h2 id="t-cov">${words(c.coverage.title)}</h2><p class="lead">${esc(c.coverage.text)}</p>
+      <dl class="covx__stats">${u.covStats.map(([n, l], i) => `<div><dt data-count="${n}">${n}</dt><dd>${esc(l)}</dd></div>`).join("")}</dl>
       <ul class="cov__list" role="list">${c.coverage.islands.map((n, i) => `<li style="--i:${i}">${esc(n)}</li>`).join("")}</ul></div>
-    <div class="cov__map">${islandsSvg}</div>
+    <div class="covx__map reveal" style="--i:1"><p class="covx__hq"><i></i>${esc(u.hq)} · ${esc(u.hqPlace)}</p>${islandsSvg}</div>
   </div>
 </section>
 
