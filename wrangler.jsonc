@@ -1,0 +1,6 @@
+{
+  // Static website on Cloudflare (Workers static assets). See LESSONS.md in mania-v3.
+  "name": "controlplus",
+  "compatibility_date": "2026-10-01",
+  "assets": { "directory": "./", "not_found_handling": "404-page" }
+}
