@@ -29,7 +29,7 @@
   new IntersectionObserver(function (es) { atContact = es[0].isIntersecting; dock(); }, { threshold: .25 }).observe($(".cta"));
 
   /* scroll-linked: progress, header, steps line, stacking cards, parallax, quote, active nav */
-  var steps = $("#steps"), stepEls = $$(".step"), cards = $$(".svc__card"), pars = $$(".par img"), quote = $(".quote__p"), qWords = quote ? $$("span", quote) : [];
+  var steps = $("#steps"), stepEls = $$(".step"), cards = $$(".svc__card"), pars = $$(".par img"), toTop = $("#toTop");
   var navLinks = $$(".hdr__nav a"), navSecs = navLinks.map(function (a) { return $(a.getAttribute("href")); });
   var ticking = false;
   function onScroll() {
@@ -54,10 +54,7 @@
       if (r2.bottom < 0 || r2.top > vh) return;
       img.style.setProperty("--py", ((r2.top + r2.height / 2 - vh / 2) * -0.08).toFixed(1) + "px");
     });
-    if (quote && !reduced) {
-      var q = quote.getBoundingClientRect(), n = Math.round(clamp((vh * 0.88 - q.top) / (q.height + vh * 0.3)) * qWords.length);
-      qWords.forEach(function (w, i) { w.classList.toggle("on", i < n); });
-    }
+    toTop.classList.toggle("on", scrollY > vh * 1.2);
     var cur = -1;
     navSecs.forEach(function (s, i) { if (s && s.getBoundingClientRect().top < vh * 0.4) cur = i; });
     navLinks.forEach(function (a, i) { a.classList.toggle("on", i === cur); });

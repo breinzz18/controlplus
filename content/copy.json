@@ -78,7 +78,8 @@
    },
    "heroBadge": "Tenerife · las 8 islas",
    "scroll": "Desplazar",
-   "waFloat": "¿Hablamos por WhatsApp?"
+   "waFloat": "¿Hablamos por WhatsApp?",
+   "toTop": "Volver arriba"
   },
   "hero": {
    "headline": "Control de plagas y seguridad alimentaria en toda Canarias",
@@ -389,7 +390,8 @@
    },
    "heroBadge": "Tenerife · all 8 islands",
    "scroll": "Scroll",
-   "waFloat": "Chat on WhatsApp?"
+   "waFloat": "Chat on WhatsApp?",
+   "toTop": "Back to top"
   },
   "hero": {
    "headline": "Pest control and food safety across the Canary Islands",

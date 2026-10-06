@@ -13,11 +13,12 @@ const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(
 // photos: p-* = 480/960/1400, s-* = 480/960/1600
 const PEST_IMG = ["p-insectos", "p-roedores", "p-desinfeccion", "p-aves", "p-carcoma", "p-certificados"];
 const HEALTH_IMG = ["p-appcc", "p-formacion", "p-legionella", "p-appcc", "p-certificados", "p-appcc", "p-certificados"];
-const SECTOR_IMG = ["p-certificados", "p-hotel", "s-comunidades", "p-roedores", "s-hogares"];
+const SECTOR_IMG = ["p-formacion", "p-hotel", "s-comunidades", "p-roedores", "s-hogares"];
+const POS = { "p-insectos": "82% 50%", "p-carcoma": "38% 40%", "p-desinfeccion": "62% 30%", "p-aves": "40% 50%", "p-certificados": "45% 30%", "p-contacto": "50% 18%", "p-formacion": "60% 40%", "p-appcc": "55% 40%", "p-legionella": "60% 50%" };
 const W = n => n.startsWith("p-") ? [480, 960, 1400] : [480, 960, 1600];
 const pic = (name, sizes, alt, cls = "", eager = false) => {
   const [a, b, c] = W(name);
-  return `<img class="${cls}" src="/img/${name}-${b}.webp" srcset="/img/${name}-${a}.webp ${a}w, /img/${name}-${b}.webp ${b}w, /img/${name}-${c}.webp ${c}w" sizes="${sizes}" alt="${esc(alt)}" ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`;
+  return `<img class="${cls}" src="/img/${name}-${b}.webp" srcset="/img/${name}-${a}.webp ${a}w, /img/${name}-${b}.webp ${b}w, /img/${name}-${c}.webp ${c}w" sizes="${sizes}" alt="${esc(alt)}"${POS[name] ? ` style="object-position:${POS[name]}"` : ""} ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`;
 };
 // headings: every word in a mask so it can rise into place
 const words = s => esc(s).split(" ").map((w, i) => `<span class="w"><span style="--w:${i}">${w}</span></span>`).join(" ");
@@ -41,7 +42,7 @@ function page(lang) {
   ].map(x => ({ ...x, wa: WA(c, x.name) }));
   const ldjson = [{
     "@context": "https://schema.org", "@type": "LocalBusiness", "@id": SITE + "/#business", name: "Control Plus Canarias", legalName: c.footer.legalName,
-    url: SITE + base, telephone: "+34627525517", email: u.emailAddress, foundingDate: "2011", image: SITE + "/img/p-hero-1600.webp", logo: SITE + "/img/logo-original.webp",
+    url: SITE + base, telephone: "+34627525517", email: u.emailAddress, foundingDate: "2011", image: SITE + "/img/og.jpg", logo: SITE + "/img/logo-original.webp",
     address: { "@type": "PostalAddress", streetAddress: "Av. Claudio Delgado Díaz, 73, 1.ª planta", postalCode: "38639", addressLocality: "Las Chafiras, San Miguel de Abona", addressRegion: "Santa Cruz de Tenerife", addressCountry: "ES" },
     areaServed: c.coverage.islands, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.3", reviewCount: "51", bestRating: "5" }
   }, { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: c.faq.items.map(f => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }];
@@ -49,9 +50,10 @@ function page(lang) {
     <g class="map__routes">${MAP.islands.filter(i => i.name !== "Tenerife").map((i, k) => `<path style="--k:${k}" d="M${MAP.hq.x} ${MAP.hq.y} Q ${((MAP.hq.x + i.x) / 2).toFixed(1)} ${(Math.min(MAP.hq.y, i.y) - 60).toFixed(1)} ${i.x} ${i.y}" pathLength="1"/>`).join("")}</g>
     ${MAP.islands.map((i, k) => `<g class="isle" style="--k:${k}"><path d="${i.d}"/><text x="${i.x}" y="${i.name === "La Graciosa" ? i.y - 18 : i.y + (i.name === "El Hierro" || i.name === "Gran Canaria" ? 44 : -16)}">${esc(i.name)}</text></g>`).join("")}
     <g class="map__hq"><circle class="map__ping" cx="${MAP.hq.x}" cy="${MAP.hq.y}" r="7"/><circle cx="${MAP.hq.x}" cy="${MAP.hq.y}" r="6"/></g></svg>`;
-  const featured = c.reviews.items[2];
-  const reviewCard = (r, i, hidden) => `<li class="rv"${hidden ? ' aria-hidden="true"' : ""}><div class="rv__top"><span class="rv__av" style="--h:${[152, 228, 12, 268][i]}">${esc(r.author[0])}</span><span><strong>${esc(r.author)}</strong><small>${G}${esc(u.reviewSource)}</small></span></div>
-      <p lang="${r.lang}">“${esc(r.text)}”</p>${r.lang !== lang && r.translation ? `<p class="rv__tr"><span>${esc(u.reviewTranslationLabel)}:</span> ${esc(r.translation)}</p>` : ""}</li>`;
+  const AV = [152, 228, 12, 268];
+  const review = (r, i, cls) => `<figure class="rv reveal ${cls}" style="--i:${i}"><span class="rv__q" aria-hidden="true">“</span>
+      <blockquote><p lang="${r.lang}">${esc(r.text)}</p>${r.lang !== lang && r.translation ? `<p class="rv__tr"><span>${esc(u.reviewTranslationLabel)}</span>${esc(r.translation)}</p>` : ""}</blockquote>
+      <figcaption><span class="rv__av" style="--h:${AV[i]}">${esc(r.author[0])}</span><span><strong>${esc(r.author)}</strong><small>${G}${esc(u.reviewSource)}</small></span></figcaption></figure>`;
 
   return `<!doctype html>
 <html lang="${lang}">
@@ -63,11 +65,11 @@ function page(lang) {
 <link rel="canonical" href="${SITE}${base}">
 <link rel="alternate" hreflang="es" href="${SITE}/"><link rel="alternate" hreflang="en" href="${SITE}/en/"><link rel="alternate" hreflang="x-default" href="${SITE}/">
 <meta name="theme-color" content="#FFFFFF">
-<meta property="og:type" content="website"><meta property="og:title" content="${esc(c.seo.title)}"><meta property="og:description" content="${esc(c.seo.description)}"><meta property="og:image" content="${SITE}/img/p-hero-1600.webp"><meta property="og:locale" content="${lang === "es" ? "es_ES" : "en_GB"}">
+<meta property="og:type" content="website"><meta property="og:title" content="${esc(c.seo.title)}"><meta property="og:description" content="${esc(c.seo.description)}"><meta property="og:image" content="${SITE}/img/og.jpg"><meta property="og:locale" content="${lang === "es" ? "es_ES" : "en_GB"}">
 <link rel="icon" href="/img/favicon-48.png" type="image/png"><link rel="apple-touch-icon" href="/img/favicon.png">
 <link rel="preload" href="/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="/video/hero2-m.jpg" fetchpriority="high">
+<link rel="preload" as="image" imagesrcset="/img/hero-480.webp 480w, /img/hero-960.webp 960w, /img/hero-1400.webp 1400w" imagesizes="(min-width:900px) 50vw, 100vw" fetchpriority="high">
 <link rel="stylesheet" href="/assets/site.css?v=${V}">
 <script>document.documentElement.classList.add("js")</script>
 <script type="application/ld+json">${JSON.stringify(ldjson)}</script>
@@ -89,8 +91,7 @@ function page(lang) {
 <main id="main">
 <section class="hero" id="top" aria-labelledby="h1">
   <div class="hero__media">
-    <img class="hero__poster" src="/video/hero2-m.jpg" width="720" height="1280" alt="${lang === "es" ? "Técnico de Control Plus inspeccionando la cocina de un restaurante" : "Control Plus technician inspecting a restaurant kitchen"}" fetchpriority="high">
-    <video class="hero__video" muted playsinline loop preload="none" data-src="/video/hero2-m.mp4" aria-hidden="true"></video>
+    <img class="hero__poster" src="/img/hero-960.webp" srcset="/img/hero-480.webp 480w, /img/hero-960.webp 960w, /img/hero-1400.webp 1400w" sizes="(min-width:900px) 50vw, 100vw" width="960" height="1200" alt="${lang === "es" ? "Técnico de control de plagas saludando a una clienta en su cocina" : "Pest control technician greeting a client in her kitchen"}" fetchpriority="high">
     <span class="hero__badge"><i></i>${esc(u.heroBadge)}</span>
   </div>
   <div class="wrap hero__body">
@@ -167,10 +168,11 @@ function page(lang) {
 <section class="sec sec--tint" id="opiniones" aria-labelledby="t-rev">
   <div class="wrap">
     <div class="sec__head reveal">${kick("reviews")}<h2 id="t-rev">${words(c.reviews.title)}</h2></div>
-    <figure class="quote"><blockquote><p class="quote__p" lang="${featured.lang}">${esc(featured.text).split(" ").map(w => `<span>${w}</span>`).join(" ")}</p></blockquote><figcaption><span class="rv__av" style="--h:12">${esc(featured.author[0])}</span>${esc(featured.author)} · ${G} ${esc(u.reviewSource)}</figcaption></figure>
-    <div class="revs">
-      <div class="score reveal">${G}<p class="score__n">4,3</p>${stars}<p>${esc(c.reviews.rating)}</p><a class="btn btn--line" href="${GMAPS}" target="_blank" rel="noopener">${esc(u.reviewsAll)} ${arIc}</a></div>
-      <div class="marq" tabindex="0" aria-label="${esc(c.reviews.title)}"><ul class="marq__row" role="list">${c.reviews.items.map((r, i) => reviewCard(r, i)).join("")}${c.reviews.items.map((r, i) => reviewCard(r, i, true)).join("")}</ul></div>
+    <div class="rvg">
+      <aside class="score reveal"><p class="score__g">${G}<span>Google</span></p><p class="score__n">4,3<small>/5</small></p>${stars}<p class="score__t">${esc(c.reviews.rating)}</p>
+        <p class="score__faces" aria-hidden="true">${c.reviews.items.map((r, i) => `<span class="rv__av" style="--h:${AV[i]}">${esc(r.author[0])}</span>`).join("")}</p>
+        <a class="btn btn--white" href="${GMAPS}" target="_blank" rel="noopener">${esc(u.reviewsAll)} ${arIc}</a></aside>
+      ${review(c.reviews.items[2], 2, "rv--big")}${review(c.reviews.items[0], 0, "")}${review(c.reviews.items[1], 1, "")}${review(c.reviews.items[3], 3, "rv--wide")}
     </div>
   </div>
 </section>
@@ -188,7 +190,7 @@ function page(lang) {
 <section class="sec" id="contacto" aria-labelledby="t-contact">
   <div class="wrap">
     <div class="cta reveal">
-      <div class="cta__img">${pic("p-hero-m", "(min-width:1024px) 40vw, 92vw", lang === "es" ? "Técnico de Control Plus" : "Control Plus technician")}</div>
+      <div class="cta__img">${pic("p-contacto", "(min-width:1024px) 40vw, 92vw", lang === "es" ? "Técnico de control de plagas sonriendo junto a su furgoneta" : "Smiling pest control technician next to his van")}</div>
       <div class="cta__body">
         ${kick("contact", true)}<h2 id="t-contact">${words(c.contact.title)}</h2>
         <p class="lead">${esc(c.contact.text)}</p>
@@ -214,6 +216,7 @@ function page(lang) {
   </div>
 </footer>
 
+<a class="totop" id="toTop" href="#top" aria-label="${esc(u.toTop)}"><svg viewBox="0 0 48 48" aria-hidden="true"><circle class="totop__track" cx="24" cy="24" r="22"/><circle class="totop__ring" cx="24" cy="24" r="22" pathLength="1"/><path class="totop__ar" d="M24 31V17M18 23l6-6 6 6"/></svg></a>
 <a class="wa-float" id="waFloat" href="${WA(c, u.brand)}" target="_blank" rel="noopener" aria-label="WhatsApp">${waIc}<span>${esc(u.waFloat)}</span></a>
 <nav class="bar" id="bar" aria-label="${esc(u.nav.contact)}">
   <a class="btn btn--wa" href="${WA(c, u.brand)}" target="_blank" rel="noopener">${waIc}<span>${esc(u.whatsapp)}</span></a>
