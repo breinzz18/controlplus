@@ -7,7 +7,7 @@ const write = (p, s) => { const u = new URL(p, root); fs.mkdirSync(new URL(".", 
 const COPY = JSON.parse(read("content/copy.json"));
 const MAP = JSON.parse(read("img/islands.json"));
 const SITE = "https://controlplus.comebientf.com";
-const V = "2";
+const V = "3";
 const esc = s => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
 // photos: p-* = 480/960/1400, s-* = 480/960/1600
@@ -18,7 +18,7 @@ const POS = { "p-insectos": "82% 50%", "p-carcoma": "38% 40%", "p-desinfeccion":
 const W = n => n.startsWith("p-") ? [480, 960, 1400] : [480, 960, 1600];
 const pic = (name, sizes, alt, cls = "", eager = false) => {
   const [a, b, c] = W(name);
-  return `<img class="${cls}" src="/img/${name}-${b}.webp" srcset="/img/${name}-${a}.webp ${a}w, /img/${name}-${b}.webp ${b}w, /img/${name}-${c}.webp ${c}w" sizes="${sizes}" alt="${esc(alt)}"${POS[name] ? ` style="object-position:${POS[name]}"` : ""} ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`;
+  return `<img class="${cls}" src="/img/${name}-${b}.webp?v=${V}" srcset="/img/${name}-${a}.webp?v=${V} ${a}w, /img/${name}-${b}.webp?v=${V} ${b}w, /img/${name}-${c}.webp?v=${V} ${c}w" sizes="${sizes}" alt="${esc(alt)}"${POS[name] ? ` style="object-position:${POS[name]}"` : ""} ${eager ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`;
 };
 // headings: every word in a mask so it can rise into place
 const words = s => esc(s).split(" ").map((w, i) => `<span class="w"><span style="--w:${i}">${w}</span></span>`).join(" ");
@@ -39,10 +39,10 @@ function page(lang) {
   const items = [
     ...c.pests.cards.map((k, i) => ({ id: "p" + i, name: k.name, text: k.text, img: PEST_IMG[i], tag: c.pests.title })),
     ...c.health.cards.map((k, i) => ({ id: "h" + i, name: k.name, text: k.text, img: HEALTH_IMG[i], tag: c.health.title }))
-  ].map(x => ({ ...x, wa: WA(c, x.name) }));
+  ].map(x => ({ ...x, v: V, wa: WA(c, x.name) }));
   const ldjson = [{
     "@context": "https://schema.org", "@type": "LocalBusiness", "@id": SITE + "/#business", name: "Control Plus Canarias", legalName: c.footer.legalName,
-    url: SITE + base, telephone: "+34627525517", email: u.emailAddress, foundingDate: "2011", image: SITE + "/img/og.jpg", logo: SITE + "/img/logo-original.webp",
+    url: SITE + base, telephone: "+34627525517", email: u.emailAddress, foundingDate: "2011", image: SITE + "/img/og.jpg", logo: SITE + "/img/logo-original.webp?v=${V}",
     address: { "@type": "PostalAddress", streetAddress: "Av. Claudio Delgado Díaz, 73, 1.ª planta", postalCode: "38639", addressLocality: "Las Chafiras, San Miguel de Abona", addressRegion: "Santa Cruz de Tenerife", addressCountry: "ES" },
     areaServed: c.coverage.islands, aggregateRating: { "@type": "AggregateRating", ratingValue: "4.3", reviewCount: "51", bestRating: "5" }
   }, { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: c.faq.items.map(f => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) }];
@@ -66,10 +66,11 @@ function page(lang) {
 <link rel="alternate" hreflang="es" href="${SITE}/"><link rel="alternate" hreflang="en" href="${SITE}/en/"><link rel="alternate" hreflang="x-default" href="${SITE}/">
 <meta name="theme-color" content="#FFFFFF">
 <meta property="og:type" content="website"><meta property="og:title" content="${esc(c.seo.title)}"><meta property="og:description" content="${esc(c.seo.description)}"><meta property="og:image" content="${SITE}/img/og.jpg"><meta property="og:locale" content="${lang === "es" ? "es_ES" : "en_GB"}">
-<link rel="icon" href="/img/favicon-48.png" type="image/png"><link rel="apple-touch-icon" href="/img/favicon.png">
+<link rel="icon" href="/img/favicon-48.png?v=${V}" type="image/png"><link rel="apple-touch-icon" href="/img/favicon.png?v=${V}">
 <link rel="preload" href="/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/fonts/geist.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" imagesrcset="/img/hero-480.webp 480w, /img/hero-960.webp 960w, /img/hero-1400.webp 1400w" imagesizes="(min-width:900px) 50vw, 100vw" fetchpriority="high">
+<link rel="preload" as="image" href="/video/hero-m.jpg?v=${V}" media="(max-width: 899px)" fetchpriority="high">
+<link rel="preload" as="image" href="/video/hero-d.jpg?v=${V}" media="(min-width: 900px)" fetchpriority="high">
 <link rel="stylesheet" href="/assets/site.css?v=${V}">
 <script>document.documentElement.classList.add("js")</script>
 <script type="application/ld+json">${JSON.stringify(ldjson)}</script>
@@ -79,7 +80,7 @@ function page(lang) {
 <i class="progress" aria-hidden="true"></i>
 <header class="hdr" id="hdr">
   <div class="hdr__in">
-    <a class="brand" href="${base}"><img src="/img/logo-hdr.webp" width="287" height="120" alt="${esc(u.brand)}"></a>
+    <a class="brand" href="${base}"><img src="/img/logo-hdr.webp?v=${V}" width="287" height="120" alt="${esc(u.brand)}"></a>
     <nav class="hdr__nav" aria-label="Main"><a href="#plagas">${esc(u.nav.pests)}</a><a href="#salud">${esc(u.nav.health)}</a><a href="#proceso">${esc(u.nav.how)}</a><a href="#opiniones">${esc(u.nav.reviews)}</a><a href="#contacto">${esc(u.nav.contact)}</a></nav>
     <div class="hdr__act">
       <div class="lang" role="group" aria-label="Language"><a href="/" ${lang === "es" ? 'aria-current="true"' : ""} hreflang="es" lang="es">ES</a><a href="/en/" ${lang === "en" ? 'aria-current="true"' : ""} hreflang="en" lang="en">EN</a></div>
@@ -91,7 +92,8 @@ function page(lang) {
 <main id="main">
 <section class="hero" id="top" aria-labelledby="h1">
   <div class="hero__media">
-    <img class="hero__poster" src="/img/hero-960.webp" srcset="/img/hero-480.webp 480w, /img/hero-960.webp 960w, /img/hero-1400.webp 1400w" sizes="(min-width:900px) 50vw, 100vw" width="960" height="1200" alt="${lang === "es" ? "Técnico de control de plagas saludando a una clienta en su cocina" : "Pest control technician greeting a client in her kitchen"}" fetchpriority="high">
+    <picture><source media="(min-width: 900px)" srcset="/video/hero-d.jpg?v=${V}"><img class="hero__poster" src="/video/hero-m.jpg?v=${V}" width="720" height="720" alt="${lang === "es" ? "Técnico de control de plagas tratando el zócalo de una cocina" : "Pest control technician treating a kitchen skirting board"}" fetchpriority="high"></picture>
+    <video class="hero__video" muted playsinline loop preload="none" data-src-m="/video/hero-m.mp4?v=${V}" data-src-d="/video/hero-d.mp4?v=${V}" aria-hidden="true"></video>
     <span class="hero__badge"><i></i>${esc(u.heroBadge)}</span>
   </div>
   <div class="wrap hero__body">
@@ -104,6 +106,7 @@ function page(lang) {
     </div>
     <div class="picker hero__in" style="--d:7"><p>${esc(u.picker)}</p><ul role="list">${u.pickerItems.map(([l, id], i) => `<li><a href="#${id}" data-open="${id}" style="--i:${i}">${esc(l)}</a></li>`).join("")}</ul></div>
   </div>
+  <a class="hero__scroll" href="#plagas" aria-label="${esc(u.scroll)}"><i></i></a>
 </section>
 
 <section class="trust" aria-label="${esc(u.brand)}">
@@ -137,7 +140,7 @@ function page(lang) {
   <div class="wrap how">
     <div class="how__side">
       <div class="sec__head reveal">${kick("how")}<h2 id="t-how">${words(c.how.title)}</h2></div>
-      <figure class="how__van reveal"><img src="/img/van.webp" width="700" height="316" alt="${lang === "es" ? "Furgoneta de Control Plus Canarias" : "Control Plus Canarias van"}" loading="lazy"><figcaption>${esc(u.brand)} · Las Chafiras, Tenerife</figcaption></figure>
+      <figure class="how__van reveal"><img src="/img/van.webp?v=${V}" width="700" height="316" alt="${lang === "es" ? "Furgoneta de Control Plus Canarias" : "Control Plus Canarias van"}" loading="lazy"><figcaption>${esc(u.brand)} · Las Chafiras, Tenerife</figcaption></figure>
     </div>
     <ol class="steps" id="steps"><i class="steps__line" aria-hidden="true"><i></i></i>${c.how.steps.map((s, i) => `
       <li class="step" style="--i:${i}"><span class="step__n">${i + 1}</span><div><h3>${esc(s.title)}</h3><p>${esc(s.text)}</p></div></li>`).join("")}
@@ -208,7 +211,7 @@ function page(lang) {
 
 <footer class="ftr">
   <div class="wrap ftr__in">
-    <img class="ftr__logo" src="/img/logo-original.webp" width="600" height="251" alt="Control Plus Canarias" loading="lazy">
+    <img class="ftr__logo" src="/img/logo-original.webp?v=${V}" width="600" height="251" alt="Control Plus Canarias" loading="lazy">
     <nav class="ftr__nav" aria-label="Footer"><a href="#plagas">${esc(u.nav.pests)}</a><a href="#salud">${esc(u.nav.health)}</a><a href="#faq">${esc(u.nav.faq)}</a><a href="#contacto">${esc(u.nav.contact)}</a></nav>
     <p>${esc(c.footer.legalName)} · ${esc(c.footer.cif)}<br>${esc(c.footer.address)}</p>
     <p><a href="${privacyHref}">${esc(c.footer.privacy)}</a> · <a href="/${other === "es" ? "" : "en/"}" hreflang="${other}" lang="${other}">${esc(u.languages[other])}</a></p>
@@ -242,8 +245,8 @@ function privacy(lang) {
   const c = COPY[lang], txt = read("content/privacy-es.txt").trim().split(/\n+/);
   const body = txt.map(l => /^[¿A-ZÁÉÍÓÚÑ ?]{8,}$/.test(l) || /^¿.*\?$/.test(l) ? `<h2>${esc(l)}</h2>` : `<p>${esc(l)}</p>`).join("\n");
   return `<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>${esc(c.footer.privacy)} · Control Plus Canarias</title><meta name="robots" content="noindex"><link rel="icon" href="/img/favicon-48.png" type="image/png"><link rel="stylesheet" href="/assets/site.css?v=${V}"></head>
-<body class="legal"><header class="legal__hdr wrap"><a class="brand" href="${lang === "es" ? "/" : "/en/"}"><img src="/img/logo-hdr.webp" width="287" height="120" alt="Control Plus Canarias"></a></header>
+<title>${esc(c.footer.privacy)} · Control Plus Canarias</title><meta name="robots" content="noindex"><link rel="icon" href="/img/favicon-48.png?v=${V}" type="image/png"><link rel="stylesheet" href="/assets/site.css?v=${V}"></head>
+<body class="legal"><header class="legal__hdr wrap"><a class="brand" href="${lang === "es" ? "/" : "/en/"}"><img src="/img/logo-hdr.webp?v=${V}" width="287" height="120" alt="Control Plus Canarias"></a></header>
 <main class="wrap legal__body">${lang === "en" ? '<p class="legal__note">This privacy policy is published in Spanish, the legally binding version.</p>' : ""}<h1>${esc(txt[0])}</h1>${body.split("\n").slice(1).join("\n")}</main></body></html>`;
 }
 

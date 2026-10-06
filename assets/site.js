@@ -14,7 +14,7 @@
   var hv = $(".hero__video");
   if (hv && !reduced && !lite) {
     hv.addEventListener("playing", function () { hv.classList.add("on"); }, { once: true });
-    addEventListener("load", function () { hv.src = hv.dataset.src; hv.play().catch(function () {}); });
+    addEventListener("load", function () { hv.src = desk.matches ? hv.dataset.srcD : hv.dataset.srcM; hv.play().catch(function () {}); });
     new IntersectionObserver(function (es) { if (hv.src) es[0].isIntersecting ? hv.play().catch(function () {}) : hv.pause(); }).observe(hv);
   } else if (hv) hv.remove();
 
@@ -109,8 +109,8 @@
     function open(id) {
       var x = data[id]; if (!x) return;
       var w = x.img.indexOf("p-") === 0 ? [480, 960, 1400] : [480, 960, 1600];
-      img.srcset = w.map(function (n) { return "/img/" + x.img + "-" + n + ".webp " + n + "w"; }).join(", ");
-      img.src = "/img/" + x.img + "-960.webp"; img.alt = x.name;
+      img.srcset = w.map(function (n) { return "/img/" + x.img + "-" + n + ".webp?v=" + x.v + " " + n + "w"; }).join(", ");
+      img.src = "/img/" + x.img + "-960.webp?v=" + x.v; img.alt = x.name;
       $("#sheetK").textContent = x.tag; $("#sheetT").textContent = x.name; $("#sheetP").textContent = x.text; $("#sheetWa").href = x.wa;
       last = d.activeElement; sheet.classList.remove("closing"); sheet.showModal(); sheet.scrollTop = 0; html.classList.add("modal");
     }
